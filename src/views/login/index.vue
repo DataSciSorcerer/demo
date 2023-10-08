@@ -13,7 +13,7 @@
           <input type="text" placeholder="Password" class="input input-bordered w-full" />
           <label class="label">
             <span class="label-text-alt"></span>
-            <span class="label-text-alt cursor-pointer">Bottom Right label</span>
+            <span class="label-text-alt cursor-pointer"></span>
           </label>
         </div>
       </div>
@@ -100,7 +100,6 @@
 </style>
 
 <script setup lang="ts">
-import { onMounted, ref } from "vue"
 import { LottieAnimation } from "lottie-web-vue"
 import WatermelonJSON from "../../assets/lottie/welcome.json"
 import router from "../../router";
