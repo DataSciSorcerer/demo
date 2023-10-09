@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@icon-park/vue-next": "^1.4.2",
     "lottie-vue": "^1.0.3",
     "lottie-web-vue": "^2.0.7",
     "party-js": "^2.2.0",
