@@ -1,13 +1,13 @@
 <script setup>
-import Head from "../../components/Head.vue";
-import Main from "../../components/Main.vue"
+import homeHead from "../../components/homeHead.vue";
+import homeMain from "../../components/homeMain.vue"
 
 </script>
 
 <template>
     <div class="container">
-        <Head></Head>
-        <Main></Main>
+        <homeHead></homeHead>
+        <homeMain></homeMain>
     </div>
 </template>
 

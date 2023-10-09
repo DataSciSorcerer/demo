@@ -2,7 +2,6 @@
 
 <template>
     <div class="main px-5 pb-20 pt-1">
-
         <div class="from-container">
             <input type="text" placeholder="Search…" class="input input-bordered w-full mr-2" />
             <button class="btn btn-circle">
