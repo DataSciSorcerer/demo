@@ -1,5 +1,6 @@
 <script setup>
-
+import { login_register } from '../../store/login_register_store';
+const useLoginRegister = login_register()
 </script>
 
 <template>
@@ -11,7 +12,7 @@
                 </button>
             </div>
             <div class="flex-1">
-                <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+                <a class="btn btn-ghost normal-case text-xl">{{ useLoginRegister.count }}</a>
             </div>
             <div class="flex-none">
                 <button class="btn btn-square btn-ghost">
@@ -49,6 +50,20 @@
                 <div class="chat-header font-[600]">
                     ChatGpt
                 </div>
+                <div class="chat-bubble">你无需明确指定复数的数字。可以通过预定义的命名参数 {count} 和/或 {n} 在语言环境信息中访问该数字。如有必要，你可以覆盖这些预定义的命名参数。</div>
+                <div class="chat-footer opacity-50">
+                    12:46:02
+                </div>
+            </div>
+            <div class="chat chat-start">
+                <div class="chat-image avatar">
+                    <div class="w-10 rounded-full">
+                        <img src="../../assets//img/user.png" />
+                    </div>
+                </div>
+                <div class="chat-header font-[600]">
+                    ChatGpt
+                </div>
                 <div class="chat-bubble">Y</div>
                 <div class="chat-footer opacity-50">
                     12:46:02
@@ -61,8 +76,8 @@
                 </div>
             </div>
         </div>
-
-        <div class="send_box mb-4">
+        <div class="divider px-4"></div>
+        <div class="send_box ">
             <div class="from-container px-4">
                 <input type="text" placeholder="Search…" class="input input-bordered w-full mr-2" />
                 <button class="btn btn-circle">
