@@ -26,7 +26,7 @@ const useLoginRegister = login_register()
             </div>
         </div>
 
-        <div class="main px-5 flex-1">
+        <div class="main px-5 flex-1 overflow-auto mb-4">
             <div class="chat chat-start">
                 <div class="chat-image avatar">
                     <div class="w-10 rounded-full">
@@ -36,35 +36,14 @@ const useLoginRegister = login_register()
                 <div class="chat-header font-[600]">
                     ChatGpt
                 </div>
-                <div class="chat-bubble">你无需明确指定复数的数字。可以通过预定义的命名参数 {count} 和/或 {n} 在语言环境信息中访问该数字。如有必要，你可以覆盖这些预定义的命名参数。</div>
-                <div class="chat-footer opacity-50">
-                    12:46:02
-                </div>
-            </div>
-            <div class="chat chat-start">
-                <div class="chat-image avatar">
-                    <div class="w-10 rounded-full">
-                        <img src="../../assets//img/user.png" />
-                    </div>
-                </div>
-                <div class="chat-header font-[600]">
-                    ChatGpt
-                </div>
-                <div class="chat-bubble">你无需明确指定复数的数字。可以通过预定义的命名参数 {count} 和/或 {n} 在语言环境信息中访问该数字。如有必要，你可以覆盖这些预定义的命名参数。</div>
-                <div class="chat-footer opacity-50">
-                    12:46:02
-                </div>
-            </div>
-            <div class="chat chat-start">
-                <div class="chat-image avatar">
-                    <div class="w-10 rounded-full">
-                        <img src="../../assets//img/user.png" />
-                    </div>
-                </div>
-                <div class="chat-header font-[600]">
-                    ChatGpt
-                </div>
-                <div class="chat-bubble">Y</div>
+                <div class="chat-bubble">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia consectetur, numquam
+                    quod temporibus quis fugit ad sunt consequatur nesciunt facere, deleniti accusantium obcaecati? Quo qui
+                    eos veritatis obcaecati facilis doloribus sapiente, nemo ratione tempora tenetur nobis adipisci, aut
+                    repellat labore rerum, fuga perspiciatis deserunt maiores. Harum esse accusantium perspiciatis laborum
+                    saepe alias fugit blanditiis asperiores? Earum recusandae dolore vitae aliquam? Fugiat, dignissimos
+                    unde? Quae neque temporibus incidunt eius excepturi magni saepe ipsa veniam sint corrupti, numquam harum
+                    placeat doloribus, ipsum in! Dignissimos impedit possimus eum cum, totam voluptatem ipsam aperiam
+                    pariatur nihil. Et blanditiis beatae laborum tempora voluptas dolor dolorum?</div>
                 <div class="chat-footer opacity-50">
                     12:46:02
                 </div>
@@ -76,8 +55,8 @@ const useLoginRegister = login_register()
                 </div>
             </div>
         </div>
-        <div class="divider px-4"></div>
-        <div class="send_box ">
+
+        <div class="send_box mb-4">
             <div class="from-container px-4">
                 <input type="text" placeholder="Search…" class="input input-bordered w-full mr-2" />
                 <button class="btn btn-circle">
@@ -88,18 +67,8 @@ const useLoginRegister = login_register()
     </div>
 </template>
 
-<style scoped>
-.container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-content: space-between;
-    flex-direction: column;
-}
-
-.from-container {
+<style scoped>.from-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-</style>
+}</style>
