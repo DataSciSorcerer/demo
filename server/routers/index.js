@@ -5,5 +5,7 @@ const routers = express.Router();
 const loginHandler = require("./requestHandle/login/index.js");
 routers.post("/login", loginHandler);
 
-module.exports = routers;
+const registerHandler = require("./requestHandle/register/index.js");
+routers.post("/register", registerHandler);
 
+module.exports = routers;
