@@ -67,7 +67,7 @@ module.exports = function sendRegisterCode(user, inputCode) {
     auth: {
       // 权限认证
       user: "1415640728@qq.com",
-      pass: "pzbbhyqxzvomfija",
+      pass: "rygtidykzqmdhiji",
     },
   });
 

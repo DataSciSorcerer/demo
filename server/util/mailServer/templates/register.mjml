@@ -15,7 +15,7 @@
     <mj-wrapper background-color="#000">
       <mj-section css-class="header">
         <mj-column width="40%">
-          <mj-image width="300px" src="https://static01.imgkr.com/temp/590385d1399741a8a56f6cb7db7a3b28.jpg"></mj-image>
+          <mj-image width="300px" src="https://pic2.zhimg.com/80/v2-aa3160b40e85d617685296483a2fb4e1_1440w.webp"></mj-image>
         </mj-column>
         <mj-column padding="40px 10px">
           <mj-text font-size="45px" align="center" color="#fff">欢迎！</mj-text>
