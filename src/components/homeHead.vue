@@ -37,11 +37,12 @@
                         </svg>
                     </div>
                     <div class="stat-title" id="party">Number of purchases</div>
-                    <div class="stat-value">{{ range_subscription }}</div>
+                    <div class="stat-value">{{ rangeSubscription }}</div>
                     <div class="stat-desc">1RMB=50times</div>
                 </div>
                 <div class="divider"></div>
-                <input type="range" min="0" max="10000" v-model="range_subscription" class="range range-primary" step="250" />
+                <input type="range" min="0" max="10000" v-model="rangeSubscription" class="range range-primary"
+                    step="250" />
                 <div class="modal-action">
                     <button class="btn mr-2 btn-primary">Buy</button>
                     <form method="dialog">
@@ -55,7 +56,7 @@
         <div class="navbar px-0">
             <div class="navbar-start">
                 <div class="dropdown">
-                    
+
                     <label class="btn btn-ghost swap swap-rotate">
                         <!-- this hidden checkbox controls the state -->
                         <input type="checkbox" />
@@ -109,11 +110,11 @@
 </template>
 <script>
 export default {
-  data() {
-    return {
-      range_subscription: 0, // 初始值
-    };
-  },
+    data() {
+        return {
+            rangeSubscription: 0, // 初始值
+        };
+    },
 };
 </script>
 <style scoped></style>

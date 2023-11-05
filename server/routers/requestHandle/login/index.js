@@ -1,54 +1,73 @@
-const joi = require("joi"); // Import Joi for request data validation 导入 Joi 用于请求数据验证
-const db = require("../../../util/mysqlServer/index"); // Import the database module 导入数据库模块
-const jwt = require("jsonwebtoken"); // Import the JWT library 导入 JWT 库
-const jwtSecret = require("../../../util/token/index"); // Import the JWT secret 导入 JWT 密钥
+const Joi = require("joi");
+const db = require("../../../util/mysqlServer/index");
+const jwt = require("jsonwebtoken");
+const jwtSecret = require("../../../util/token/index");
+const send = require("../../../util/globalSend/index");
 
-/**
- * Handles user login and authentication.
- * 处理用户登录和身份验证
- *
- * @param {Object} req - The HTTP request object HTTP 请求对象
- * @param {Object} res - The HTTP response object HTTP 响应对象
- */
 const login = (req, res) => {
   const postData = req.body;
-  const schema = joi.object({
-    loginId: joi.string().trim().email().pattern(/^\S*$/).required(),
-    password: joi.string().trim().min(6).max(12).pattern(/^\S*$/).required(),
+  const schema = Joi.object({
+    loginId: Joi.string().trim().email().pattern(/^\S*$/).required(),
+    password: Joi.string().trim().min(6).max(12).pattern(/^\S*$/).required(),
   });
 
   const { error, value } = schema.validate(postData);
 
   if (error) {
-    return res.status(400).json({ error: error.details[0].message });
+    return res.json(send(19, error.details[0].message));
   } else {
-    const sql = "SELECT id FROM user WHERE id = ?";
-
+    const sql = "SELECT id, password FROM user WHERE id = ?";
     db.query(sql, value.loginId, (err, results) => {
       if (err) {
-        return res.status(400).json({ error: error.details[0].message });
+        return res.json(send(20, err.message));
       } else {
         if (results.length === 0) {
-          res.send("User does not exist. 用户不存在！！！");
+          return res.json(send(21, "User does not register."));
         } else {
-          const userQuery = "SELECT password FROM user WHERE id = ?";
+          console.log(results[0].password + "+" + value.password);
+          if (results[0].password === value.password) {
+            const sql = "SELECT isLogin FROM user WHERE id = ?";
 
-          db.query(userQuery, value.loginId, (err, results) => {
-            if (err) {
-              return res.status(400).json({ error: error.details[0].message });
-            } else {
-              if (results[0].password != value.password) {
-                res.send("Incorrect password. 密码错误！！！");
+            db.query(sql, value.loginId, (err, results) => {
+              if (err) {
+                return res.json(send(22, err.message));
               } else {
-                const token = jwt.sign(value.loginId, jwtSecret.jwtSecret);
-                res.json({ loginStatus: "OK " + value.loginId, token: token });
+                console.log();
+                if (results[0].isLogin === 0) {
+                  const token = jwt.sign(
+                    { loginId: value.loginId },
+                    jwtSecret.jwtSecret
+                  );
+                  const updateQuery =
+                    "UPDATE user SET isLogin = ? WHERE id = ?";
+                  db.query(
+                    updateQuery,
+                    [1, value.loginId],
+                    (updateErr, updateResults) => {
+                      if (updateErr) {
+                        return res.json(send(23, updateErr));
+                      } else {
+                        return res.json(
+                          send(24, "login successfully", {
+                            loginId: value.loginId,
+                            token: token,
+                          })
+                        );
+                      }
+                    }
+                  );
+                } else {
+                  return res.json(send(25, "User has logged in"));
+                }
               }
-            }
-          });
+            });
+          } else {
+            return res.json(send(26, "Incorrect password."));
+          }
         }
       }
     });
   }
 };
 
-module.exports = login; // Export the login function 导出登录函数
+module.exports = login;

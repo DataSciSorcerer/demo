@@ -82,7 +82,7 @@ module.exports = function sendRegisterCode(user, inputCode) {
     if (!err) {
       console.log("邮件已经发送完成");
     } else {
-      console.log(err);
+      console.log(err.response);
     }
   });
 };

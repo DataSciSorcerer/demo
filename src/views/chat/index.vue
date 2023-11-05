@@ -1,6 +1,6 @@
 <script setup>
-import { login_register } from '../../store/login_register_store';
-const useLoginRegister = login_register()
+// import { login_register } from '../../store/loginRegisterStore';
+// const useLoginRegister = login_register()
 </script>
 
 <template>
@@ -12,7 +12,7 @@ const useLoginRegister = login_register()
                 </button>
             </div>
             <div class="flex-1">
-                <a class="btn btn-ghost normal-case text-xl">{{ useLoginRegister.count }}</a>
+                <a class="btn btn-ghost normal-case text-xl"></a>
             </div>
             <div class="flex-none">
                 <button class="btn btn-square btn-ghost">
@@ -57,7 +57,7 @@ const useLoginRegister = login_register()
         </div>
 
         <div class="send_box mb-4">
-            <div class="from-container px-4">
+            <div class="fromContainer px-4">
                 <input type="text" placeholder="Search…" class="input input-bordered w-full mr-2" />
                 <button class="btn btn-circle">
                     <icon-send size="24" />
@@ -67,8 +67,10 @@ const useLoginRegister = login_register()
     </div>
 </template>
 
-<style scoped>.from-container {
+<style scoped>
+.fromContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}</style>
+}
+</style>
