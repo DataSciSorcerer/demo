@@ -1,0 +1,60 @@
+[33mcommit 60f7513d8531256bed4cbb3bcf428df5a48b46a3[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: DataSciSorcerer <1415640728@qq,com>
+Date:   Sun Nov 5 14:06:33 2023 +0800
+
+    add many
+
+[33mcommit 75ef93cd624afe67ea1ec06406d14aa1f86be1d4[m
+Author: DataSciSorcerer <1415640728@qq,com>
+Date:   Mon Oct 23 23:01:52 2023 +0800
+
+    Optimize code (login and register api)
+
+[33mcommit 67eb2e8ceb317e7b6dce42596ffbefa79d1fad37[m
+Author: DataSciSorcerer <1415640728@qq,com>
+Date:   Mon Oct 23 22:53:36 2023 +0800
+
+    Add login and register API
+
+[33mcommit 655316e4bc1f3b92b1cf47edfc3e07f456bc8624[m
+Author: DataSciSorcerer <1415640728@qq,com>
+Date:   Sat Oct 21 10:27:07 2023 +0800
+
+    Add mailserver and register UI
+
+[33mcommit 89353114336522006cfbd488eb8adad8e235d976[m
+Author: DataSciSorcerer <1415640728@qq,com>
+Date:   Fri Oct 20 12:48:16 2023 +0800
+
+    Improve chat UI and
+    built a basic backend framework
+
+[33mcommit 96041ec82b4f1b03c816f0e3071ba4579a27df97[m
+Author: DataSciSorcerer <1415640728@qq,com>
+Date:   Thu Oct 12 23:17:54 2023 +0800
+
+    create pinia
+
+[33mcommit 11890edf3c1cfd38ae2c0c50fc5af3473142c45d[m
+Author: DataSciSorcerer <1415640728@qq,com>
+Date:   Mon Oct 9 23:48:15 2023 +0800
+
+    add Chat page
+
+[33mcommit 629d6d9594070d15046605c8e6448075cb8403bf[m
+Author: DataSciSorcerer <1415640728@qq,com>
+Date:   Mon Oct 9 22:04:22 2023 +0800
+
+    Add new page register
+
+[33mcommit da8d3801b2ce74deff57db6d495808a783f44f44[m
+Author: DataSciSorcerer <1415640728@qq,com>
+Date:   Sun Oct 8 14:45:36 2023 +0800
+
+    Componentize for home page
+
+[33mcommit d56d4af0f8c94d4c91e2a3cd72f036f03bc73526[m
+Author: DataSciSorcerer <1415640728@qq,com>
+Date:   Thu Sep 21 01:08:26 2023 +0800
+
+    The first push

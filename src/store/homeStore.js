@@ -2,64 +2,107 @@ import { defineStore } from "pinia";
 
 export const homeItemStore = defineStore("home", {
   state: () => ({
-    item: [
-      {
-        index: "0",
-        title: "🗣️讲故事",
-        desc: "让Gpt扮演一个讲故事的人。",
-      },
-      {
-        index: "1",
-        title: "🎼担任作曲家",
-        desc: "让Gpt辅助你作曲。",
-      },
-      {
-        index: "2",
-        title: "lorem lorem Yesyes",
-        desc: "lorem lorem Yesyes",
-      },
-      {
-        index: "3",
-        title: "lorem lorem Yesyes",
-        desc: "",
-      },
-      {
-        index: "4",
-        title: "lorem lorem Yesyes",
-        desc: "lorem lorem Yesyes",
-      },
-      {
-        index: "5",
-        title: "lorem lorem Yesyes",
-        desc: "lorem lorem Yesyes",
-      },
-      {
-        index: "1",
-        title: "lorem lorem Yesyes",
-        desc: "lorem lorem Yesyes",
-      },
-      {
-        index: "2",
-        title: "lorem lorem Yesyes",
-        desc: "lorem lorem Yesyes",
-      },
-      {
-        index: "3",
-        title: "lorem lorem Yesyes",
-        desc: "",
-      },
-      {
-        index: "4",
-        title: "lorem lorem Yesyes",
-        desc: "lorem lorem Yesyes",
-      },
-      {
-        index: "5",
-        title: "lorem lorem Yesyes",
-        desc: "lorem lorem Yesyes",
-      },
-    ],
+    all: {
+      nowShow: 0,
+      items: [
+        {
+          itemIndex: 0,
+          title: "全部",
+          item: [
+            {
+              id: 0,
+              title: "😶‍🌫️consectetur adip",
+              desc: "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid",
+            },
+            {
+              id: 1,
+              title: "🎰consectetur",
+              desc: "consectetur adipiscing elit, sed do eiusmod tempor incidid",
+            },
+            {
+              id: 2,
+              title: "🐄ipsum",
+              desc: "lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            },
+            {
+              id: 3,
+              title: "🎹adipiscing",
+              desc: "consectetur adipiscing elit, sed do eiusmod tempor",
+            },
+            {
+              id: 4,
+              title: "🔍dolor",
+              desc: "ipsum dolor sit amet, consectetur",
+            },
+            {
+              id: 5,
+              title: "🐧this is a test",
+              desc: "lorem ipsum dolor sit amet, consectetur",
+            },
+          ],
+        },
+        {
+          itemIndex: 1,
+          title: "通用",
+          item: [
+            {
+              id: 0,
+              title: "😶‍🌫️consectetur adip",
+              desc: "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incidid",
+            },
+          ],
+        },
+        {
+          itemIndex: 2,
+          title: "生活",
+          item: [
+            {
+              id: 0,
+              title: "🎰consectetur",
+              desc: "consectetur adipiscing elit, sed do eiusmod tempor incidid",
+            },
+          ],
+        },
+        {
+          itemIndex: 3,
+          title: "科技",
+          item: [
+            {
+              id: 0,
+              title: "🐄ipsum",
+              desc: "lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            },
+          ],
+        },
+        {
+          itemIndex: 4,
+          title: "文创",
+          item: [
+            {
+              id: 0,
+              title: "🎹adipiscing",
+              desc: "consectetur adipiscing elit, sed do eiusmod tempor",
+            },
+          ],
+        },
+        {
+          itemIndex: 5,
+          title: "医学",
+          item: [
+            {
+              id: 0,
+              title: "🐧this is a test",
+              desc: "lorem ipsum dolor sit amet, consectetur",
+            },
+          ],
+        },
+      ],
+    },
   }),
   getters: {},
-  actions: {},
+  actions: {
+    changeTab(index) {
+      this.all.nowShow = index;
+    },
+  },
 });

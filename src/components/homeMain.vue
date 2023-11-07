@@ -1,7 +1,7 @@
 <script setup>
 import { homeItemStore } from "../store/homeStore"
 import fuse from "fuse.js"
-
+ 
 
 const useHomeItemStore = homeItemStore();
 
@@ -9,14 +9,14 @@ const useHomeItemStore = homeItemStore();
 //search
 const fuseOptions = {
     keys: [
-        "title",
-        "desc"
+        // "title",
+        // "desc"
     ],
 }
 const fuseSearch = new fuse(useHomeItemStore.item, fuseOptions)
 const searchItemAction = () => {
-    let fuseResponse = fuseSearch.search("lor")
-    console.log(fuseResponse)
+    // let fuseResponse = fuseSearch.search("作曲")
+    // console.log(fuseResponse)
 }
 </script>
 
@@ -32,19 +32,16 @@ const searchItemAction = () => {
                 </svg>
             </button>
         </div>
-        <div class="tabs mt-3 overflow-y-scroll">
-            <a class="tab">Tab 1</a>
-            <a class="tab tab-active">Tab 2</a>
-            <a class="tab">Tab 3</a>
-            <a class="tab">Tab 4</a>
-            <a class="tab">Tab 5</a>
-            <a class="tab">Tab 6</a>
-            <a class="tab">Tab 7</a>
-            <a class="tab">Tab 8</a>
-            <a class="tab">Tab 9</a>
+        <div class="tabsContainer">
+            <div class="tabs mt-3 inline-block" v-for="itemValue in useHomeItemStore.all.items" :key="itemValue.itemIndex">
+                <a @click="useHomeItemStore.changeTab(itemValue.itemIndex)" class="tab tab-active"
+                    v-if="useHomeItemStore.all.nowShow === itemValue.itemIndex">{{ itemValue.title }}</a>
+                <a @click="useHomeItemStore.changeTab(itemValue.itemIndex)" class="tab" v-else>{{ itemValue.title }}</a>
+            </div>
         </div>
         <div class="templets mt-3">
-            <div class="card bg-base-200 item" v-for="itemValue in useHomeItemStore.item" :key="itemValue.index">
+            <div class="card bg-base-200 item"
+                v-for="itemValue in useHomeItemStore.all.items[useHomeItemStore.all.nowShow].item" :key="itemValue.id">
                 <div class="card-body items-center text-center p-4">
                     <h2 class="card-title">{{ itemValue.title }}</h2>
                     <p>{{ itemValue.desc }}</p>
@@ -80,5 +77,16 @@ const searchItemAction = () => {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.tabsContainer {
+    /* background: #000; */
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.tabsContainer::-webkit-scrollbar {
+    height: 0;
 }
 </style>
