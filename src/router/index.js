@@ -31,25 +31,25 @@ const routes = [
 ];
 
 const router = createRouter({
-  routes,
   history: createWebHistory(),
+  routes,
 });
 
 router.beforeEach((to, from, next) => {
   const token = localStorage.getItem("token");
-  if (to.matched.some((record) => record.meta.requiresAuth)) {
-    // 这个路由需要验证登录状态
 
-    if (!token) {
-      // 如果没有 token，重定向到登录页
-      next({ name: "Login" });
+  if (token) {
+    if (to.name === "Login" || to.name === "Register") {
+      next({ name: "Home" });
     } else {
-      // 有 token，允许访问
       next();
     }
   } else {
-    // 不需要验证登录状态，直接通过
-    next();
+    if (to.matched.some((record) => record.meta.requiresAuth)) {
+      next({ name: "Login" });
+    } else {
+      next();
+    }
   }
 });
 

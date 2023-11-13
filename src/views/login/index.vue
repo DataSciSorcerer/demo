@@ -109,7 +109,7 @@ import WatermelonJSON from "../../assets/lottie/welcome.json"
 import router from "../../router";
 import { ref } from "vue"
 import { useToast } from "vue-toastification";
-import { api } from "../../util/axios";
+import { api,setToken } from "../../util/axios";
 
 
 const toast = useToast();
@@ -168,6 +168,7 @@ const to_home = async () => {
         console.log(response.data)
         // 存储token到LocalStorage
         localStorage.setItem('token', response.data.data.token);
+        setToken(localStorage.getItem('token'))
         // 从LocalStorage获取token
         const token = localStorage.getItem('token');
         console.log(token)

@@ -92,20 +92,27 @@
                             </a>
                         </li>
                         <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
+                        <li @click="logout"><a>Logout</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </template>
-<script>
-export default {
-    data() {
-        return {
-            rangeSubscription: 0, // 初始值
-        };
-    },
-};
+<script setup>
+import { ref } from "vue"
+import router from "../router/index";
+import {api} from "../util/axios/index"
+
+//rangeSubscription
+const rangeSubscription = ref(0)
+
+
+//Logout account
+const logout = () => {
+    
+    localStorage.removeItem('token');
+    router.push({ name: 'Login' });
+}
 </script>
 <style scoped></style>
